@@ -6,10 +6,6 @@ export const ProductsContext = createContext();
 const initialState = {
     products: [],
     categories: [],
-    //     { label: "men's clothing", isChecked: true },
-    //     { label: "women's clothing", isChecked: true },
-    //     { label: "jewelery", isChecked: true },
-    // ],
     sorted: "default",
 };
 
