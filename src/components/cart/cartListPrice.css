@@ -1,0 +1,31 @@
+.price-wrapper {
+    margin: 0 auto;
+    margin-top: 2.5em;
+    width: 80%;
+    padding-top: 1em;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-paragraph {
+    margin: 0.3em;
+}
+
+.price-divider {
+    border: none;
+    height: 1px;
+    background-color: #47060e;
+    margin: 1em 0;
+}
+
+.total-price {
+    margin: 0;
+}
+
+.price-count {
+    opacity: 0.6;
+    font-size: 0.9em;
+}

@@ -1,0 +1,10 @@
+.service-wrapper {
+    width: 60%;
+    margin: 2em auto;
+    text-align: justify;
+}
+
+.service-wrapper h2,
+.service-wrapper h3 {
+    text-align: center;
+}

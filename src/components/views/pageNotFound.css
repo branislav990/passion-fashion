@@ -1,0 +1,23 @@
+.four-o-four img {
+    width: auto;
+    height: 100dvh;
+    box-shadow: 0 0 50px 50px white;
+}
+
+.homepage-btn {
+    position: fixed;
+    left: 5em;
+    top: 5em;
+    background-color: #00dfc2;
+    border: none;
+    padding: 1em;
+    border-radius: 3em;
+    color: white;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5em;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    cursor: pointer;
+}

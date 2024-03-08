@@ -1,0 +1,42 @@
+.rating-price {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 3em auto;
+    align-content: flex-start;
+}
+
+.rating-wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-left: -1em;
+}
+
+.qty-rating-wrapper {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    padding-left: 1em;
+}
+
+.single-price {
+    margin: 0;
+    font-size: 3.5em;
+    align-self: flex-start;
+}
+
+.addToCart-wrapper {
+    margin: 2em;
+    text-align: right;
+}
+
+.input-quantity {
+    width: 3em;
+    margin-right: 1em;
+    box-shadow: 0 0 2px #47060e;
+}
+
+.single-product-title,
+.single-product-description {
+    text-align: left;
+}

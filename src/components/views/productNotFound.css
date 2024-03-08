@@ -1,0 +1,7 @@
+.product-not-found img {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 50px 50px white;
+}

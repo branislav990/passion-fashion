@@ -1,0 +1,17 @@
+.contact-wrapper {
+    width: 70%;
+    margin: 2em auto;
+}
+
+.contact-form {
+    background-color: #f3d0b4;
+    width: 40%;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+
+.contact-img {
+    height: 15em;
+    border-radius: 1em;
+}

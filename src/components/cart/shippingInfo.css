@@ -1,0 +1,72 @@
+.shipping-address {
+    width: 55%;
+    margin: 1em auto;
+    background-color: #f3d0b4;
+    padding: 1em;
+    padding-bottom: 0;
+    border-radius: 0.7em;
+}
+
+.shipping-form {
+    margin: 3em auto;
+    width: 80%;
+}
+
+.input-rest input:not([type="submit"]) {
+    border-radius: 0.5em;
+    padding: 0.5em;
+    height: 1.5em;
+    font-size: 1em;
+    border: none;
+    transition: box-shadow 0.5s;
+}
+
+.input-rest input:not([type="submit"]):focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #47060e;
+}
+
+.input-rest input:not([type="submit"])::placeholder {
+    letter-spacing: 0.1em;
+}
+
+.shipping-input {
+    width: 90%;
+}
+
+.input-rest {
+    margin: 0.8em auto;
+}
+
+.input-submit {
+    padding: 1em;
+    margin-top: 2em;
+    margin-bottom: 0;
+    border-radius: 0.5em;
+    border: none;
+    cursor: pointer;
+    background-color: #0075c9;
+    box-shadow: 2px 2px 4px #6a357e;
+    color: white;
+    letter-spacing: 0.2em;
+    font-size: 1em;
+    transition: scale 0.3s, background-color 0.3s;
+    font-weight: bold;
+}
+
+.input-submit:active {
+    scale: 0.9;
+}
+
+.input-submit:hover {
+    background-color: #0092d5;
+}
+
+.swal2-confirm,
+.swal2-cancel {
+    box-shadow: none !important;
+}
+
+.swal2-title {
+    color: #798897;
+}
