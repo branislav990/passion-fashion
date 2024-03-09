@@ -1,7 +1,6 @@
 import {
     FILTER_ITEMS,
     SET_ITEMS,
-    SORT_FILTERED_ITEMS,
     SORT_ITEMS,
 } from "../utils/actionTypes";
 
@@ -43,44 +42,8 @@ export const productsReducer = (state, action) => {
         case FILTER_ITEMS:
             return {
                 ...state,
-                categories: payload.categories,
-                products: [...state.products].map((product) =>
-                    product.category === payload.category
-                        ? { ...product, visible: payload.isChecked }
-                        : product
-                ),
-            };
-
-        case SORT_FILTERED_ITEMS: // after fetching new items through filtering
-            let newState = {
-                sorted: state.sorted,
-                categories: payload.categories,
-                products: [...payload.products].map((product) => {
-                    const matchedCategory = payload.categories.find(
-                        (cat) => cat.label === product.category
-                    );
-                    return {
-                        ...product,
-                        visible: matchedCategory.isChecked,
-                    };
-                }),
-            };
-            console.log(newState);
-            if (state.sorted === "ascending")
-                return {
-                    ...newState,
-                    products: [...newState.products].sort(
-                        (a, b) => a.price - b.price
-                    ),
-                };
-            else if (state.sorted === "descending")
-                return {
-                    ...newState,
-                    products: [...newState.products].sort(
-                        (a, b) => b.price - a.price
-                    ),
-                };
-            else return newState;
+                categories: payload.categories
+            }
 
         default:
             return state;

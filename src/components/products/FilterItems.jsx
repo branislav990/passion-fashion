@@ -1,57 +1,22 @@
 import { useContext } from "react";
 import { ProductsContext } from "../../contexts/ProductsContext";
-import { FILTER_ITEMS, SORT_FILTERED_ITEMS } from "../../utils/actionTypes";
-import instance from "../../utils/api";
-import Swal from "sweetalert2";
+import { FILTER_ITEMS } from "../../utils/actionTypes";
 
 const FilterItems = () => {
-    const { categories, products, sorted, productsDispatch } =
+    const { categories, productsDispatch } =
         useContext(ProductsContext);
 
     const handleChange = (index) => {
-        const updatedCategories = categories.map((category, i) =>
-            i === index
-                ? { ...category, isChecked: !category.isChecked }
-                : category
-        );
-
-        if (
-            updatedCategories[index].isChecked &&
-            !products.some(
-                (product) => product.category === updatedCategories[index].label
-            )
-        ) {
-            instance
-                .get("/products")
-                .then((res) => {
-                    const excludedElectronics = res.data.filter(
-                        (item) => item.category !== "electronics"
-                    );
-                    productsDispatch({
-                        type: SORT_FILTERED_ITEMS,
-                        payload: {
-                            products: excludedElectronics,
-                            categories: updatedCategories,
-                        },
-                    });
-                })
-                .catch(() => {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Oops...",
-                        text: "Something went wrong!",
-                    });
-                });
-        } else {
-            productsDispatch({
-                type: FILTER_ITEMS,
-                payload: {
-                    categories: updatedCategories,
-                    category: updatedCategories[index].label,
-                    isChecked: updatedCategories[index].isChecked,
-                },
-            });
-        }
+        productsDispatch({
+            type: FILTER_ITEMS,
+            payload: {
+                categories: categories.map((category, i) =>
+                    i === index
+                        ? { ...category, isChecked: !category.isChecked }
+                        : category
+                ),
+            },
+        });
     };
 
     return (

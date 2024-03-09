@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ProductsContext } from "../../contexts/ProductsContext";
 import { SORT_ITEMS } from "../../utils/actionTypes";
 import instance from "../../utils/api";
 import Swal from "sweetalert2";
 
 const SortItems = () => {
-    const { sorted, categories, productsDispatch } =
+    const { sorted, productsDispatch } =
         useContext(ProductsContext);
 
     const handleChange = (e) => {
@@ -16,23 +16,12 @@ const SortItems = () => {
                     const excludedElectronics = res.data.filter(
                         (item) => item.category !== "electronics"
                     );
-                    // Filter products based on selected categories
-                    const filteredProducts = excludedElectronics.filter(
-                        (product) =>
-                            categories.some(
-                                (category) =>
-                                    category.label === product.category &&
-                                    category.isChecked
-                            )
-                    );
+                    console.log(excludedElectronics);
                     productsDispatch({
                         type: SORT_ITEMS,
                         payload: {
                             sortBy: "default",
-                            products: filteredProducts.map((prevProduct) => ({
-                                ...prevProduct,
-                                visible: true,
-                            })),
+                            products: excludedElectronics,
                         },
                     });
                 })
@@ -41,9 +30,8 @@ const SortItems = () => {
                         icon: "error",
                         title: "Oops...",
                         text: "Something went wrong!",
-                        // footer: '<a href="#">Why do I have this issue?</a>'
-                      });
-                })
+                    });
+                });
         } else {
             productsDispatch({
                 type: SORT_ITEMS,

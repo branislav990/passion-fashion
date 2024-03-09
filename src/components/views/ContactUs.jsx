@@ -26,7 +26,7 @@ const ContactUs = () => {
             icon: "success",
             title: "Your message was sent successfully",
             showConfirmButton: false,
-            timer: 2000,
+            timer: 3000,
         });
     };
 

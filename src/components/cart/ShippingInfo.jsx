@@ -48,6 +48,8 @@ const ShippingInfo = () => {
 
         cartDispatch({ type: EMPTY_CART });
 
+        setTimeout(() => navigate("/cart-empty"), 1000);
+
         Swal.fire({
             title: "Thank you for your purchase!",
             text: "Your items are on their way to your address.",
