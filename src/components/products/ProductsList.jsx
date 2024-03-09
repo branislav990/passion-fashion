@@ -13,7 +13,8 @@ import Footer from "../views/Footer";
 import Error from "../error/Error";
 
 const ProductsList = () => {
-    const { products, productsDispatch } = useContext(ProductsContext);
+    const { products, categories, productsDispatch } =
+        useContext(ProductsContext);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
 
@@ -21,13 +22,9 @@ const ProductsList = () => {
         instance
             .get("/products")
             .then((res) => {
-                const excludedElectronics = res.data.filter(
+                return res.data.filter(
                     (item) => item.category !== "electronics"
                 );
-                return excludedElectronics.map((prevProduct) => ({
-                    ...prevProduct,
-                    visible: true,
-                }));
             })
             .then((products) => {
                 instance.get("/products/categories").then((res) => {
@@ -44,7 +41,9 @@ const ProductsList = () => {
                 });
             })
             .catch(() => setError(true))
-            .finally(() => setLoading(false));
+            .finally(() => {
+                setLoading(false);
+            });
     }, []);
 
     return (
@@ -54,14 +53,18 @@ const ProductsList = () => {
                 <Loading />
             ) : error ? (
                 <Error />
-            ) : (
+            ) : products.length ? (
                 <>
                     <FilterItems />
                     <SortItems />
-                    {products.some((product) => product.visible) ? (
+                    {categories.some((category) => category.isChecked) ? (
                         <div className="products-list">
                             {products.map((product) =>
-                                product.visible ? (
+                                categories.some(
+                                    (category) =>
+                                        category.label === product.category &&
+                                        category.isChecked
+                                ) ? (
                                     <ProductsListItem
                                         key={product.id}
                                         product={product}
@@ -74,6 +77,8 @@ const ProductsList = () => {
                     )}
                     <Footer />
                 </>
+            ) : (
+                <Loading />
             )}
         </>
     );

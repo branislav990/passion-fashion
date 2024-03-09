@@ -1,8 +1,4 @@
-import {
-    FILTER_ITEMS,
-    SET_ITEMS,
-    SORT_ITEMS,
-} from "../utils/actionTypes";
+import { FILTER_ITEMS, SET_ITEMS, SORT_ITEMS } from "../utils/actionTypes";
 
 export const productsReducer = (state, action) => {
     const { type, payload } = action;
@@ -42,8 +38,8 @@ export const productsReducer = (state, action) => {
         case FILTER_ITEMS:
             return {
                 ...state,
-                categories: payload.categories
-            }
+                categories: payload.categories,
+            };
 
         default:
             return state;
