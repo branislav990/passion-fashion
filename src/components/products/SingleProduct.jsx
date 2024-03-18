@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import Navbar from "../navbar/Navbar";
 import instance from "../../utils/api";
 import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../loading/Loading";
 import SingleProductInfo from "./SingleProductInfo";
-import Footer from "../views/Footer";
 import Error from "../error/Error";
+import "./singleProduct.css";
 
 const SingleProduct = () => {
     const [product, setProduct] = useState();
@@ -33,22 +32,27 @@ const SingleProduct = () => {
 
     return (
         <div>
-            <Navbar />
             {loading ? (
                 <Loading />
             ) : error ? (
-                <Error />
-            ) : (
-                <div className="single-product-wrapper">
-                    <img
-                        className="single-img"
-                        src={product.image}
-                        height={500}
-                    />
-                    <SingleProductInfo product={product} />
+                <div className="error">
+                    <Error />
                 </div>
+            ) : (
+                <>
+                    <div className="single-product-wrapper">
+                        <div className="single-product-img-wrapper">
+                            <img
+                                className="single-img"
+                                src={product.image}
+                                height={500}
+                            />
+                        </div>
+
+                        <SingleProductInfo product={product} />
+                    </div>
+                </>
             )}
-            <Footer />
         </div>
     );
 };

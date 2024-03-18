@@ -1,0 +1,58 @@
+.cart-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+    list-style-type: none;
+    margin: 1em 0;
+    background-color: white;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    position: relative;
+}
+
+.cart-item-small {
+    width: 4em;
+}
+
+.price-count {
+    display: flex;
+}
+
+.cart-item-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.cart-item-title {
+    font-weight: bold;
+}
+
+.cart-item-price-wrapper {
+    align-self: flex-start;
+}
+
+.cart-item-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.trash-can {
+    position: absolute;
+    right: 0.3em;
+    bottom: 0.2em;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+}
+
+.trash-can:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.trash-can-icon {
+    width: 15px;
+}

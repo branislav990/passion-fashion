@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { ADD_ITEM } from "../../utils/actionTypes";
+import "./addToCart.css";
+import cartButton from "../../assets/cart-button.png";
 
 const AddToCart = ({ product }) => {
     const [count, setCount] = useState(1);
@@ -23,8 +25,14 @@ const AddToCart = ({ product }) => {
                 onChange={(e) =>
                     setCount(parseInt(e.target.value.replace(/[^0-9]/g, "")))
                 }
+                onInput={(e) => {
+                    if (e.target.value <= 1) {
+                        e.target.value = 1;
+                    }
+                }}
             />
             <button className="add-to-cart" onClick={handleClick}>
+                <img src={cartButton} className="cart-icon-button" />
                 ADD TO CART
             </button>
         </div>

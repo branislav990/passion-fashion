@@ -1,74 +1,117 @@
-.main-page {
-    position: relative;
-}
-
-.main-page-logo {
-    width: 20%;
-}
-
-.product-array-wrapper {
-    margin: 0 auto;
+.advertisement {
+    margin-top: 1.5em;
     width: 85%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    position: relative;
-    bottom: 100px;
+    margin-inline: auto;
+    align-items: center;
+    align-content: center;
 }
 
-.main-page-card {
-    display: flex;
-    border: 0.5px solid black;
-    border-radius: 1em;
-    box-shadow: 2px 2px 10px black;
-    width: 30%;
+.crsl {
+    max-width: 80%;
+    margin-inline: auto;
+    border-radius: 0.5em;
+    box-shadow: 0 0 10px 10px white;
+    margin-left: 0;
+    margin-right: 0;
 }
 
-.main-page-card:hover {
-    box-shadow: 2px 2px 14px #47060e;
-    border-color: #47060e;
+.crsl div {
+    background-color: white;
 }
 
-.jewelry-ad {
-    padding: 1em;
-}
-
-.product-array {
-    align-self: stretch;
-    border-radius: 1em;
-}
-
-.best-offer-img {
+.crsl img {
+    object-fit: contain;
     width: 100%;
-    border-radius: 1em;
+    height: 100%;
 }
 
-.best-offer-text {
-    position: absolute;
-    top: -40%;
-    left: 50%;
-    transform: translateX(-50%);
-    /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-        "Lucida Sans", Arial, sans-serif; */
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    color: black;
-    width: 100%;
-    font-size: 1.8em;
-    font-weight: 100;
+.fashion-collection {
+    box-shadow: 0 0 10px 10px white;
 }
 
-.bof {
-    position: relative;
+.crsl .legend {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.5);
+    opacity: 1 !important;
+    font-weight: bold;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    bottom: 15px !important;
+    color: #556370 !important;
+    font-size: 1em !important;
 }
 
-.product-array .best-offer-text {
-    position: absolute;
-    top: -30%;
-    left: 50%;
-    transform: translateX(-50%);
-    /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-        "Lucida Sans", Arial, sans-serif; */
-    color: black;
-    width: 100%;
-    /* font-weight: 100; */
+.crsl .legend:hover {
+    background-color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 1);
+}
+
+@media only screen and (max-width: 1100px) {
+    .advertisement {
+        flex-direction: column;
+    }
+
+    .fashion-collection {
+        width: 90%;
+        margin-bottom: 3em;
+    }
+
+    .crsl {
+        margin-inline: auto;
+        width: 80%;
+        margin-bottom: 3em;
+    }
+
+    .crsl div {
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .fashion-collection {
+        width: 500px;
+    }
+
+    .crsl {
+        width: 400px;
+    }
+
+    .crsl div {
+        height: 400px;
+        width: 400px;
+    }
+}
+
+@media only screen and (min-width: 1250px) {
+    .fashion-collection {
+        width: 550px;
+    }
+
+    .crsl {
+        width: 450px;
+    }
+
+    .crsl div {
+        height: 450px;
+        width: 450px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .fashion-collection {
+        width: 600px;
+    }
+
+    .crsl {
+        width: 500px;
+    }
+
+    .crsl div {
+        height: 500px;
+        width: 500px;
+    }
 }

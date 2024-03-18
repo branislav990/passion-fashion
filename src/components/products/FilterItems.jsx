@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { ProductsContext } from "../../contexts/ProductsContext";
 import { FILTER_ITEMS } from "../../utils/actionTypes";
+import "./filterItems.css";
+import cross from "../../assets/cross.png";
+import check from "../../assets/check.png";
 
 const FilterItems = () => {
-    const { categories, productsDispatch } =
-        useContext(ProductsContext);
+    const { categories, productsDispatch } = useContext(ProductsContext);
 
     const handleChange = (index) => {
         productsDispatch({
@@ -20,16 +22,22 @@ const FilterItems = () => {
     };
 
     return (
-        <div>
+        <div className="checkbox-wrapper">
             {categories.map((category, index) => (
                 <div key={index}>
-                    <label>
+                    <label className="category-checkbox">
                         <input
                             type="checkbox"
                             checked={category.isChecked}
                             onChange={() => handleChange(index)}
                         />
-                        <span>{category.label}</span>
+                        <span className="checkbox-label">
+                            <img
+                                src={category.isChecked ? check : cross}
+                                width={20}
+                            />{" "}
+                            <span className="just-label">{category.label}</span>
+                        </span>
                     </label>
                 </div>
             ))}

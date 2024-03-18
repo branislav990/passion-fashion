@@ -1,29 +1,24 @@
 import { Link } from "react-router-dom";
-import Navbar from "../navbar/Navbar";
 import emptyCartImg from "../../assets/empty-cart.png";
-import Footer from "./Footer";
+import "./cartViewEmpty.css";
 
 const CartViewEmpty = () => {
     return (
-        <div>
-            <Navbar />
-            <div>
-                <img
-                    src={emptyCartImg}
-                    alt="Empty cart"
-                    className="empty-cart-img"
-                />
+        <div className="cart-empty container">
+            <img
+                src={emptyCartImg}
+                alt="Empty cart"
+                className="empty-cart-img"
+            />
 
-                <h2>Your cart is empty</h2>
+            <h2>Your cart is empty</h2>
 
-                <h3 className="fashion-collection">
-                    <Link to={"/products"} className="stylish-fashion">
-                        Return to the main page and explore our stylish fashion
-                        collection
-                    </Link>
-                </h3>
-            </div>
-            {/* <Footer /> */}
+            <h3 className="return-to-main-page">
+                <Link to={"/products"} className="stylish-fashion">
+                    Return to the main page and explore our stylish fashion
+                    collection
+                </Link>
+            </h3>
         </div>
     );
 };

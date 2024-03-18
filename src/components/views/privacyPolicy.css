@@ -1,11 +1,15 @@
-.service-wrapper {
+.privacy-wrapper {
     max-width: 900px;
     margin-inline: auto;
     margin-bottom: 2em;
     text-align: justify;
 }
 
-.service-wrapper h2,
-.service-wrapper h4 {
+.privacy-wrapper h2,
+.privacy-wrapper h4 {
     text-align: center;
+}
+
+.privacy-wrapper h4:first-child {
+    margin-top: 1em;
 }

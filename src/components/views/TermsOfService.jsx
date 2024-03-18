@@ -1,11 +1,8 @@
-import Navbar from "../navbar/Navbar";
-import Footer from "./Footer";
 import "./termsOfService.css";
 
 const TermsOfService = () => {
     return (
-        <div>
-            <Navbar />
+        <div className="container">
             <div className="service-wrapper">
                 <h2>Terms of service</h2>
                 <p>
@@ -18,73 +15,73 @@ const TermsOfService = () => {
                     contained in this website are protected by applicable
                     copyright and trademark law.
                 </p>
-                <h3>Use License</h3>
+                <h4>Use License</h4>
                 <p>
                     1. Permission is granted to temporarily download one copy of
-                    the materials (information or software) on RUTI Inc.’s
+                    the materials (information or software) on FASHOIN PASSION Inc.’s
                     website for personal, non-commercial transitory viewing
                     only. This is the grant of a license, not a transfer of
                     title, and under this license you may not: - modify or copy
                     the materials; - use the materials for any commercial
                     purpose, or for any public display (commercial or
                     non-commercial); - attempt to decompile or reverse engineer
-                    any software contained on RUTI Inc.’s website; - remove any
+                    any software contained on FASHOIN PASSION Inc.’s website; - remove any
                     copyright or other proprietary notations from the materials;
                     or - transfer the materials to another person or "mirror"
                     the materials on any other server. 2. This license shall
                     automatically terminate if you violate any of these
-                    restrictions and may be terminated by RUTI Inc. at any time.
+                    restrictions and may be terminated by FASHOIN PASSION Inc. at any time.
                     Upon terminating your viewing of these materials or upon the
                     termination of this license, you must destroy any downloaded
                     materials in your possession whether in electronic or
                     printed format.
                 </p>
-                <h3>Disclaimer</h3>
+                <h4>Disclaimer</h4>
                 <p>
-                    The materials on RUTI Inc.’s website are provided "as is".
-                    RUTI Inc. makes no warranties, expressed or implied, and
+                    The materials on FASHOIN PASSION Inc.’s website are provided "as is".
+                    FASHOIN PASSION Inc. makes no warranties, expressed or implied, and
                     hereby disclaims and negates all other warranties, including
                     without limitation, implied warranties or conditions of
                     merchantability, fitness for a particular purpose, or
                     non-infringement of intellectual property or other violation
-                    of rights. Further, RUTI Inc. does not warrant or make any
+                    of rights. Further, FASHOIN PASSION Inc. does not warrant or make any
                     representations concerning the accuracy, likely results, or
                     reliability of the use of the materials on its Internet
                     website or otherwise relating to such materials or on any
                     sites linked to this site.
                 </p>
-                <h3>Limitations</h3>
+                <h4>Limitations</h4>
                 <p>
-                    In no event shall RUTI Inc. or its suppliers be liable for
+                    In no event shall FASHOIN PASSION Inc. or its suppliers be liable for
                     any damages (including, without limitation, damages for loss
                     of data or profit, or due to business interruption,) arising
-                    out of the use or inability to use the materials on RUTI
-                    Inc.'s Internet site, even if RUTI Inc. or a RUTI Inc.
+                    out of the use or inability to use the materials on FASHOIN PASSION
+                    Inc.'s Internet site, even if FASHOIN PASSION Inc. or a FASHOIN PASSION Inc.
                     authorized representative has been notified orally or in
                     writing of the possibility of such damage. Because some
                     jurisdictions do not allow limitations on implied
                     warranties, or limitations of liability for consequential or
                     incidental damages, these limitations may not apply to you.
                 </p>
-                <h3>Revisions and Errata</h3>
+                <h4>Revisions and Errata</h4>
                 <p>
-                    For your convenience RUTI Inc. may provide, links to third
+                    For your convenience FASHOIN PASSION Inc. may provide, links to third
                     party websites operated by other entities on the Website. If
                     you use such third party sites, you will leave this Website.
                     If you decide to visit any linked third party website, you
                     do so at your own risk and it is your responsibility to take
                     all protective measures to guard against viruses or other
-                    destructive elements. RUTI Inc. does not make any warranty
+                    destructive elements. FASHOIN PASSION Inc. does not make any warranty
                     or representation regarding, and does not endorse, any
                     linked websites or the information appearing thereon or any
                     of the products or services described thereon. Any third
-                    party links do not imply that RUTI Inc. sponsors, endorses,
+                    party links do not imply that FASHOIN PASSION Inc. sponsors, endorses,
                     is affiliated or associated with any linked third party
-                    websites. RUTI Inc. has not reviewed all of the sites linked
+                    websites. FASHOIN PASSION Inc. has not reviewed all of the sites linked
                     to its website and is not responsible for the contents of
                     any such linked site.
                 </p>
-                <h3>Acceptable Use</h3>
+                <h4>Acceptable Use</h4>
                 <p>
                     You shall not do any of the following or permit any other
                     third parties to do any of the following: (a) Post or
@@ -103,7 +100,7 @@ const TermsOfService = () => {
                     by copyright or other proprietary right, without obtaining
                     the permission of the copyright owner or right holder; (d)
                     Account sharing, including, without limitation, letting
-                    third parties use your account and password. RUTI INC.
+                    third parties use your account and password. FASHOIN PASSION INC.
                     reserves the right to change or modify any of the terms
                     contained in these terms & conditions, at any time. Any such
                     modifications or changes will immediately become effective
@@ -113,16 +110,16 @@ const TermsOfService = () => {
                     Terms & Conditions and additional terms or notices posted on
                     the Website.
                 </p>
-                <h3>Payment</h3>
+                <h4>Payment</h4>
                 <p>
                     You agree to pay the full price for all products you
                     purchase from the website. You are responsible for the
                     timely payment of all fees and for providing us with a valid
-                    credit card account for payment of all fees. Ruti accepts
-                    American Express, Visa, Mastercard, Discover, and Ruti Gift
+                    credit card account for payment of all fees. FASHOIN PASSION accepts
+                    American Express, Visa, Mastercard, Discover, and FASHOIN PASSION Gift
                     Cards.
                 </p>
-                <h3>Acceptance of Your Order</h3>
+                <h4>Acceptance of Your Order</h4>
                 <p>
                     Once you have made your choice and your order has been
                     placed, you will receive an email acknowledging the details
@@ -130,7 +127,7 @@ const TermsOfService = () => {
                     order, just a confirmation that we have received it. Unless
                     you cancel your order, acceptance of your order will be
                     perfected upon completion of the packing of your order.
-                    Completion of the contract between you and RUTI, INC. will
+                    Completion of the contract between you and FASHOIN PASSION, INC. will
                     be perfected when we dispatch the goods to you at which time
                     you will receive a second email containing you tracking
                     number, and confirming that your order has been dispatched.
@@ -138,7 +135,7 @@ const TermsOfService = () => {
                     California, USA, and the language of the contract is
                     English. Neither our third party payment processor nor our
                     nominated courier has the authority to accept an order on
-                    behalf of RUTI, INC. We reserve the right not to accept your
+                    behalf of FASHOIN PASSION, INC. We reserve the right not to accept your
                     order in the event, for example, that we are unable to
                     obtain authorization for payment, that shipping restrictions
                     apply to a particular item, that the item ordered is out of
@@ -171,7 +168,6 @@ const TermsOfService = () => {
                     returned to us.
                 </p>
             </div>
-            <Footer />
         </div>
     );
 };

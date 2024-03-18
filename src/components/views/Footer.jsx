@@ -4,18 +4,24 @@ import "./footer.css";
 const Footer = () => {
     return (
         <div className="footer-wrapper">
-            <div>
-                <h4>&copy; 2024 ART APPAREL - PASSION FOR FASHION</h4>
+            <div className="footer">
+                <div>
+                    <h4 className="footer-header">
+                        &copy; 2024 FASHION PASSION
+                    </h4>
+                </div>
+                <div className="footer-links">
+                    <Link to="/privacy-policy" className="footer-link">
+                        <span className="footer-element">Privacy Policy</span>
+                    </Link>
+                    <Link to="/terms-of-service" className="footer-link">
+                        <span className="footer-element">Terms of Service</span>
+                    </Link>
+                    <Link to="/contact-us" className="footer-link">
+                        <span className="footer-element">Contact Us</span>
+                    </Link>
+                </div>
             </div>
-            <Link to="/privacy-policy">
-                <span>Privacy Policy</span>
-            </Link>
-            <Link to="/terms-of-service">
-                <span>Terms of Service</span>
-            </Link>
-            <Link to="/contact-us">
-                <span>Contact Us</span>
-            </Link>
         </div>
     );
 };

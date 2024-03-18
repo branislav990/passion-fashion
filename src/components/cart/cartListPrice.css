@@ -29,3 +29,9 @@
     opacity: 0.6;
     font-size: 0.9em;
 }
+
+@media only screen and (max-width: 1100px) {
+    .price-item h4 {
+        font-size: 1.3em;
+    }
+}

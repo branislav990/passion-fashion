@@ -1,0 +1,46 @@
+.category-checkbox {
+    padding: 0.1em;
+    margin-bottom: 0.2em;
+    margin-right: 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: #f2fedc; /* #fff7d6 */
+}
+
+.category-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-label {
+    padding: 0.5em;
+}
+
+.checkbox-label img {
+    padding: 0.1em;
+    margin-bottom: 0.2em;
+}
+
+.just-label {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    padding-left: 0.5em;
+    color: #4b5865;
+}
+
+.checkbox-wrapper {
+    display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+    .checkbox-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .checkbox-wrapper {
+        margin-bottom: 0.5em;
+    }
+}

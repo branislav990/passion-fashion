@@ -1,8 +1,7 @@
-import { ReactComponent as Logo } from "../../assets/logo1.svg";
+import logo from "../../assets/logo.png";
 import Cart from "./Cart";
-import "./navbar-style.css";
-import { Link, useNavigate } from "react-router-dom";
-import passionLogo from "../../assets/passion.PNG";
+import "./navbar.css";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -11,21 +10,13 @@ const Navbar = () => {
         <div className="navbar">
             <div className="navbar-elements">
                 <span className="company-logo">
-                    <Logo
-                        width="120"
+                    <img
+                        className="main-logo"
+                        src={logo}
+                        alt="Logo"
                         onClick={() => navigate("/")}
-                        style={{
-                            cursor: "pointer",
-                        }}
                     />
                 </span>
-                <Link to="/products">
-                    <img
-                        className="passion-logo"
-                        src={passionLogo}
-                        alt="passion for fashion logo"
-                    />
-                </Link>
                 <Cart />
             </div>
         </div>

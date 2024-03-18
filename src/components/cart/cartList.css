@@ -1,0 +1,36 @@
+.order-summary {
+    margin: 3em auto;
+    color: #1e507b;
+}
+
+.cart-list {
+    padding: 0;
+}
+
+.delete-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-all {
+    padding: 0.7em;
+    margin-bottom: 0;
+    border-radius: 0.5em;
+    border: none;
+    cursor: pointer;
+    background-color: #d5001e;
+    box-shadow: 2px 2px 4px #6a357e;
+    color: white;
+    letter-spacing: 0.1em;
+    font-size: 0.6em;
+    transition: scale 0.3s, background-color 0.3s;
+    font-weight: bold;
+}
+
+.delete-all:hover {
+    background-color: #ab0000;
+}
+
+.delete-all:focus {
+    scale: 0.9;
+}

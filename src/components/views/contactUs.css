@@ -1,17 +1,68 @@
 .contact-wrapper {
-    width: 70%;
+    width: 100%;
     margin: 2em auto;
+    display: flex;
+    justify-content: center;
 }
 
 .contact-form {
-    background-color: #f3d0b4;
-    width: 40%;
+    background-color: rgba(199, 209, 236, 0.4);
+    width: 70%;
     border-radius: 1em;
-    padding: 1em;
+    padding-inline: 5%;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    color: #1e507b;
 }
 
+.contact-title {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
 
 .contact-img {
     height: 15em;
     border-radius: 1em;
+}
+
+.contact-input input {
+    border-radius: 0.5em;
+    padding: 1em;
+    height: 1.5em;
+    font-size: 1em;
+    border: none;
+    transition: box-shadow 0.5s;
+    color: #1e507b;
+    margin-bottom: 0.8em;
+    width: 80%;
+}
+
+.contact-input input::placeholder {
+    letter-spacing: 0.1em;
+    color: #1e507b;
+    opacity: 0.5;
+}
+
+.contact-input textarea {
+    width: 80%;
+    border-radius: 0.5em;
+    padding: 1em;
+    font-size: 1em;
+    border: none;
+    color: #1e507b;
+    margin-bottom: 0.8em;
+    min-height: 10em;
+}
+
+.contact-input textarea::placeholder {
+    letter-spacing: 0.1em;
+    color: #1e507b;
+    opacity: 0.5;
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-input input,
+    .contact-input textarea {
+        width: 100%;
+    }
 }

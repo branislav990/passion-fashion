@@ -32,16 +32,9 @@ const ContactUs = () => {
 
     return (
         <div>
-            <Navbar />
             <div className="contact-wrapper">
-                {/* <div className="img-wrapper">
-                    <img
-                        className="contact-img"
-                        src={contactUsImg}
-                        alt="Contact us"
-                    />
-                </div> */}
                 <form className="contact-form" onSubmit={handleSubmit}>
+                    <h2 className="contact-title">Contact us</h2>
                     <div className="contact-input">
                         <input
                             type="text"
@@ -79,7 +72,6 @@ const ContactUs = () => {
                     />
                 </form>
             </div>
-            <Footer />
         </div>
     );
 };

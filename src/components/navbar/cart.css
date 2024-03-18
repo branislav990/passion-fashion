@@ -1,0 +1,26 @@
+.svg-item {
+    width: 40px;
+    transition: scale 0.3s;
+}
+
+.svg-item:hover {
+    scale: 1.03;
+}
+
+.cart-items {
+    display: flex;
+    align-items: flex-start;
+}
+
+.product-qnt {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    font-size: 0.8em;
+    color: #1e507b;
+    border-radius: 50%;
+    background-color: #e0efff;
+    width: auto;
+    padding-inline: 0.5em;
+    margin-left: 0.5em;
+    font-weight: bold;
+}

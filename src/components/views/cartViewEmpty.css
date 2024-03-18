@@ -1,0 +1,27 @@
+.empty-cart-img {
+    width: 300px;
+}
+
+@media only screen and (max-width: 576px) {
+    .empty-cart-img {
+        width: 250px;
+        max-width: 90%;
+    }
+
+    .cart-empty h3 {
+        font-size: 1.2em;
+    }
+}
+
+.cart-empty {
+    max-width: 80%;
+}
+
+.return-to-main-page .stylish-fashion {
+    text-decoration: none;
+    color: #d97e0e;
+}
+
+.return-to-main-page .stylish-fashion:hover {
+    text-decoration: underline;
+}

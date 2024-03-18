@@ -1,0 +1,23 @@
+.navbar {
+    background-color: #1e507b;
+    box-shadow: 0 0 2px 2px #1e507b;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.main-logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+.navbar-elements {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1300px;
+    width: 90%;
+    align-items: center;
+}

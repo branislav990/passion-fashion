@@ -1,24 +1,22 @@
-.shipping-address {
-    width: 55%;
-    margin: 1em auto;
-    background-color: #f3d0b4;
-    padding: 1em;
-    padding-bottom: 0;
-    border-radius: 0.7em;
-}
-
 .shipping-form {
     margin: 3em auto;
     width: 80%;
 }
 
+@media only screen and (max-width: 950px) {
+    .shipping-form {
+        width: 100%;
+    }
+}
+
 .input-rest input:not([type="submit"]) {
     border-radius: 0.5em;
-    padding: 0.5em;
+    padding: 1em;
     height: 1.5em;
     font-size: 1em;
     border: none;
     transition: box-shadow 0.5s;
+    color: #1e507b;
 }
 
 .input-rest input:not([type="submit"]):focus {
@@ -28,6 +26,8 @@
 
 .input-rest input:not([type="submit"])::placeholder {
     letter-spacing: 0.1em;
+    color: #1e507b;
+    opacity: 0.5;
 }
 
 .shipping-input {

@@ -9,7 +9,40 @@ export const productsReducer = (state, action) => {
             payload.categories.forEach((category) =>
                 categories.push({ label: category, isChecked: true })
             );
-            return { ...state, categories, products: payload.products };
+            if (state.sorted == "ascending") {
+                return state.categories.length
+                    ? {
+                          ...state,
+                          products: payload.products.sort(
+                              (a, b) => a.price - b.price
+                          ),
+                      }
+                    : {
+                          ...state,
+                          categories,
+                          products: payload.products.sort(
+                              (a, b) => a.price - b.price
+                          ),
+                      };
+            } else if (state.sorted == "descending") {
+                return state.categories.length
+                    ? {
+                          ...state,
+                          products: payload.products.sort(
+                              (a, b) => b.price - a.price
+                          ),
+                      }
+                    : {
+                          ...state,
+                          categories,
+                          products: payload.products.sort(
+                              (a, b) => b.price - a.price
+                          ),
+                      };
+            }
+            return state.categories.length
+                ? { ...state, products: payload.products }
+                : { ...state, categories, products: payload.products };
 
         case SORT_ITEMS:
             if (payload.sortBy === "ascending")

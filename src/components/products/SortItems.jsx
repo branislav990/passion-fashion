@@ -3,10 +3,10 @@ import { ProductsContext } from "../../contexts/ProductsContext";
 import { SORT_ITEMS } from "../../utils/actionTypes";
 import instance from "../../utils/api";
 import Swal from "sweetalert2";
+import "./sortItems.css";
 
 const SortItems = () => {
-    const { sorted, productsDispatch } =
-        useContext(ProductsContext);
+    const { sorted, productsDispatch } = useContext(ProductsContext);
 
     const handleChange = (e) => {
         if (e.target.value === "default") {
@@ -43,10 +43,14 @@ const SortItems = () => {
     };
 
     return (
-        <div>
+        <div className="sort-wrapper">
             <label>
-                Sort by:
-                <select value={sorted} onChange={handleChange}>
+                <span className="sort-label">Sort by:</span>
+                <select
+                    value={sorted}
+                    onChange={handleChange}
+                    className="custom-select"
+                >
                     <option value={"default"}>Default</option>
                     <option value={"ascending"}>
                         Price &#40;low to hight&#41;

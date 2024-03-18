@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
-import Navbar from "../navbar/Navbar";
 import instance from "../../utils/api";
 import Loading from "../loading/Loading";
 import ProductsListItem from "./ProductsListItem";
-import "./products.css";
+import "./productsList.css";
 import SortItems from "./SortItems";
 import { useContext } from "react";
 import { ProductsContext } from "../../contexts/ProductsContext";
 import { SET_ITEMS } from "../../utils/actionTypes";
 import FilterItems from "./FilterItems";
-import Footer from "../views/Footer";
 import Error from "../error/Error";
 
 const ProductsList = () => {
@@ -48,35 +46,43 @@ const ProductsList = () => {
 
     return (
         <>
-            <Navbar />
             {loading ? (
                 <Loading />
             ) : error ? (
-                <Error />
+                <div className="error">
+                    <Error />
+                </div>
             ) : products.length ? (
-                <>
-                    <FilterItems />
-                    <SortItems />
+                <div className="products-list-wrapper container">
+                    <aside className="filters">
+                        <FilterItems />
+                        <SortItems />
+                    </aside>
                     {categories.some((category) => category.isChecked) ? (
-                        <div className="products-list">
-                            {products.map((product) =>
-                                categories.some(
-                                    (category) =>
-                                        category.label === product.category &&
-                                        category.isChecked
-                                ) ? (
-                                    <ProductsListItem
-                                        key={product.id}
-                                        product={product}
-                                    />
-                                ) : null
-                            )}
+                        <div className=" products-list">
+                            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+                                {products
+                                    .filter((product) =>
+                                        categories.some(
+                                            (category) =>
+                                                category.label ===
+                                                    product.category &&
+                                                category.isChecked
+                                        )
+                                    )
+                                    .map((product) => (
+                                        <div className="col mb-5" key={product.id}>
+                                            <ProductsListItem
+                                                product={product}
+                                            />
+                                        </div>
+                                    ))}
+                            </div>
                         </div>
                     ) : (
-                        <h1>No product meets selected criteria</h1>
+                        <h1 className="no-product">No product meets selected criteria</h1>
                     )}
-                    <Footer />
-                </>
+                </div>
             ) : (
                 <Loading />
             )}

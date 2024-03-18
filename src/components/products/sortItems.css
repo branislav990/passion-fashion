@@ -1,0 +1,32 @@
+.custom-select {
+    padding: 0.1em;
+    border: none;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    background-color: #d9f0ed;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    color: #4b5865;
+    outline: none;
+    box-shadow: 0 0 2px #4b5865;
+    transition: box-shadow 0.3s;
+}
+
+.custom-select:hover,
+.custom-select:focus {
+    box-shadow: 0 0 4px #4b5865;
+}
+
+.sort-label {
+    padding-right: 0.5em;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    color: #4b5865;
+}
+
+@media only screen and (max-width: 576px) {
+    .sort-wrapper {
+        align-self: flex-end;
+        margin-right: 5%;
+    }
+}

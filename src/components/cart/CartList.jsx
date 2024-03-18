@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import CartListItem from "./CartListItem";
 import CartListPrice from "./CartListPrice";
-import "./cart-list.css";
+import "./cartList.css";
 import { CartContext } from "../../contexts/CartContext";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
@@ -33,7 +33,7 @@ const CartList = ({ cartState }) => {
             <ul className="cart-list">
                 {cartState.map((item) => (
                     <CartListItem
-                        className="cart-list-item"
+                        // className="cart-list-item"
                         key={item.id}
                         item={item}
                     />
