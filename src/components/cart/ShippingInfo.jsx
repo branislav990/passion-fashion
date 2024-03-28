@@ -3,9 +3,10 @@ import "./shippingInfo.css";
 import instance from "../../utils/api";
 import { v4 as uuidv4 } from "uuid";
 import { CartContext } from "../../contexts/CartContext";
-import { EMPTY_CART } from "../../utils/actionTypes";
+import { ADD_LOCAL_CART, EMPTY_CART } from "../../utils/actionTypes";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { CartManagementContext } from "../../contexts/CartManagementContext";
 
 const ShippingInfo = () => {
     const [user, setUser] = useState({
@@ -18,6 +19,7 @@ const ShippingInfo = () => {
     });
 
     const { cartState, cartDispatch } = useContext(CartContext);
+    const { cartManagementDispatch } = useContext(CartManagementContext);
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -33,7 +35,7 @@ const ShippingInfo = () => {
         cartState.forEach((product) => {
             const cartProduct = {
                 productId: product.id,
-                quiantity: product.count,
+                quantity: product.count,
             };
             cartProducts.push(cartProduct);
         });
@@ -44,7 +46,13 @@ const ShippingInfo = () => {
                 date: new Date().toLocaleDateString("en-CA"),
                 products: cartProducts,
             })
-            .then((res) => console.log(res));
+            .then((res) => {
+                console.log(res.data);
+                cartManagementDispatch({
+                    type: ADD_LOCAL_CART,
+                    payload: res.data,
+                });
+            });
 
         cartDispatch({ type: EMPTY_CART });
 

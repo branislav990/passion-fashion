@@ -1,70 +1,142 @@
 import "./App.css";
-import Navbar from "./components/navbar/Navbar";
-import HomeView from "./components/views/HomeView";
 import { Routes, Route } from "react-router-dom";
-import ProductsList from "./components/products/ProductsList";
-import SingleProduct from "./components/products/SingleProduct";
 import CartContextProvider from "./contexts/CartContext";
-import CartViewEmpty from "./components/views/CartViewEmpty";
-import CartViewFull from "./components/views/CartViewFull";
 import ProductsContextProvider from "./contexts/ProductsContext";
-import PrivacyPolicy from "./components/views/PrivacyPolicy";
-import TermsOfService from "./components/views/TermsOfService";
-import PageNotFound from "./components/views/PageNotFound";
-import ContactUs from "./components/views/ContactUs";
-import ProductNotFound from "./components/views/ProductNotFound";
-import Footer from "./components/views/Footer";
+import CartManagementProvider from "./contexts/CartManagementContext";
+import AuthContextProvider from "./contexts/AuthContext";
+import { isAuthenticated } from "./utils/auth";
+import PrivateRoute from "./components/admin/PrivateRoute";
+import {
+    Navbar,
+    HomeView,
+    ProductsList,
+    SingleProduct,
+    CartViewEmpty,
+    CartViewFull,
+    PrivacyPolicy,
+    TermsOfService,
+    PageNotFound,
+    ContactUs,
+    ProductNotFound,
+    Footer,
+    Admin,
+    ProductManagement,
+    CartManagement,
+    Login,
+    AddNewProduct,
+} from "./components";
 
 function App() {
     return (
         <div className="app-container">
             <ProductsContextProvider>
                 <CartContextProvider>
-                    <header>
-                        <Navbar />
-                    </header>
-                    <main>
-                        <Routes>
-                            <Route
-                                path="/products"
-                                element={<ProductsList />}
-                            />
-                            <Route
-                                path="/products/:productId"
-                                element={<SingleProduct />}
-                            />
+                    <CartManagementProvider>
+                        <AuthContextProvider>
+                            <header>
+                                <Navbar />
+                            </header>
+                            <main>
+                                <Routes>
+                                    <Route
+                                        path="/products"
+                                        element={<ProductsList />}
+                                    />
+                                    <Route
+                                        path="/products/:productId"
+                                        element={<SingleProduct />}
+                                    />
 
-                            <Route
-                                path="/cart-empty"
-                                element={<CartViewEmpty />}
-                            />
-                            <Route
-                                path="/cart-full"
-                                element={<CartViewFull />}
-                            />
+                                    <Route
+                                        path="/cart-empty"
+                                        element={<CartViewEmpty />}
+                                    />
+                                    <Route
+                                        path="/cart-full"
+                                        element={<CartViewFull />}
+                                    />
 
-                            <Route
-                                path="/privacy-policy"
-                                element={<PrivacyPolicy />}
-                            />
-                            <Route
-                                path="/terms-of-service"
-                                element={<TermsOfService />}
-                            />
-                            <Route path="/contact-us" element={<ContactUs />} />
+                                    <Route
+                                        path="/privacy-policy"
+                                        element={<PrivacyPolicy />}
+                                    />
+                                    <Route
+                                        path="/terms-of-service"
+                                        element={<TermsOfService />}
+                                    />
+                                    <Route
+                                        path="/contact-us"
+                                        element={<ContactUs />}
+                                    />
 
-                            <Route path="/" element={<HomeView />} />
+                                    <Route path="/" element={<HomeView />} />
 
-                            <Route
-                                path="/product-not-found"
-                                element={<ProductNotFound />}
-                            />
-                            <Route path="*" element={<PageNotFound />} />
-                        </Routes>
-                    </main>
-                    <footer>
-                        <Footer />
-                    </footer>
+                                    <Route path="/login" element={<Login />} />
+
+                                    <Route
+                                        path="/admin"
+                                        element={
+                                            <PrivateRoute
+                                                isAuthenticated={
+                                                    isAuthenticated
+                                                }
+                                            >
+                                                <Admin />
+                                            </PrivateRoute>
+                                        }
+                                    />
+                                    <Route
+                                        path="/product-management"
+                                        element={
+                                            <PrivateRoute
+                                                isAuthenticated={
+                                                    isAuthenticated
+                                                }
+                                            >
+                                                <ProductManagement />
+                                            </PrivateRoute>
+                                        }
+                                    />
+                                    <Route
+                                        path="/cart-management"
+                                        element={
+                                            <PrivateRoute
+                                                isAuthenticated={
+                                                    isAuthenticated
+                                                }
+                                            >
+                                                <CartManagement />
+                                            </PrivateRoute>
+                                        }
+                                    />
+                                    <Route
+                                        path="/add-new-product"
+                                        element={
+                                            <PrivateRoute
+                                                isAuthenticated={
+                                                    isAuthenticated
+                                                }
+                                            >
+                                                <AddNewProduct />
+                                            </PrivateRoute>
+                                        }
+                                    />
+
+                                    <Route
+                                        path="/product-not-found"
+                                        element={<ProductNotFound />}
+                                    />
+                                    <Route
+                                        path="*"
+                                        element={<PageNotFound />}
+                                    />
+                                </Routes>
+                            </main>
+                            <footer>
+                                <Footer />
+                            </footer>
+                        </AuthContextProvider>
+                    </CartManagementProvider>
                 </CartContextProvider>
             </ProductsContextProvider>
         </div>

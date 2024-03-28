@@ -1,0 +1,55 @@
+.add-new-product-form {
+    background-color: #b4d5f5;
+    max-width: 90%;
+    width: 750px;
+    margin-inline: auto;
+    height: fit-content;
+    margin-bottom: 1em;
+    padding: 1em 3em;
+    border-radius: 1em;
+}
+
+.add-product-wrapper {
+    width: 100%;
+}
+
+.add-product-wrapper input,
+.add-product-wrapper textarea,
+.add-product-wrapper select {
+    width: 100%;
+    margin: 0.5em 0;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: #1e507b;
+}
+
+.add-product-wrapper input,
+.add-product-wrapper textarea {
+    border-radius: 0.5em;
+    padding: 0.5em;
+    border: none;
+}
+
+.add-product-wrapper textarea {
+    margin-top: 0.8em;
+}
+
+.add-product-wrapper input:focus,
+.add-product-wrapper textarea:focus {
+    outline: 1px solid #1e507b;
+}
+
+.add-product-wrapper input::placeholder,
+.add-product-wrapper textarea::placeholder {
+    color: rgba(30, 80, 123, 0.6);
+}
+
+.add-product-wrapper textarea {
+    height: 7em;
+}
+
+@media only screen and (max-width: 500px) {
+    .add-new-product-form {
+        padding-inline: 1em;
+    }
+}

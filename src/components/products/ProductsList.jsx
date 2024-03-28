@@ -17,31 +17,33 @@ const ProductsList = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        instance
-            .get("/products")
-            .then((res) => {
-                return res.data.filter(
-                    (item) => item.category !== "electronics"
-                );
-            })
-            .then((products) => {
-                instance.get("/products/categories").then((res) => {
-                    const excludedElectronics = res.data.filter(
-                        (item) => item !== "electronics"
-                    );
-                    productsDispatch({
-                        type: SET_ITEMS,
-                        payload: {
-                            products: products,
-                            categories: excludedElectronics,
-                        },
-                    });
-                });
-            })
-            .catch(() => setError(true))
-            .finally(() => {
-                setLoading(false);
-            });
+        products.length
+            ? setLoading(false)
+            : instance
+                  .get("/products")
+                  .then((res) => {
+                      return res.data.filter(
+                          (item) => item.category !== "electronics"
+                      );
+                  })
+                  .then((products) => {
+                      instance.get("/products/categories").then((res) => {
+                          const excludedElectronics = res.data.filter(
+                              (item) => item !== "electronics"
+                          );
+                          productsDispatch({
+                              type: SET_ITEMS,
+                              payload: {
+                                  products: products,
+                                  categories: excludedElectronics,
+                              },
+                          });
+                      });
+                  })
+                  .catch(() => setError(true))
+                  .finally(() => {
+                      setLoading(false);
+                  });
     }, []);
 
     return (
@@ -71,7 +73,10 @@ const ProductsList = () => {
                                         )
                                     )
                                     .map((product) => (
-                                        <div className="col mb-5" key={product.id}>
+                                        <div
+                                            className="col mb-5"
+                                            key={product.id}
+                                        >
                                             <ProductsListItem
                                                 product={product}
                                             />
@@ -80,7 +85,9 @@ const ProductsList = () => {
                             </div>
                         </div>
                     ) : (
-                        <h1 className="no-product">No product meets selected criteria</h1>
+                        <h1 className="no-product">
+                            No product meets selected criteria
+                        </h1>
                     )}
                 </div>
             ) : (

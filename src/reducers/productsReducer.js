@@ -1,4 +1,11 @@
-import { FILTER_ITEMS, SET_ITEMS, SORT_ITEMS } from "../utils/actionTypes";
+import {
+    ADD_PRODUCT,
+    DELETE_ITEM,
+    FILTER_ITEMS,
+    SET_ITEMS,
+    SORT_ITEMS,
+    UPDATE_PRODUCT,
+} from "../utils/actionTypes";
 
 export const productsReducer = (state, action) => {
     const { type, payload } = action;
@@ -6,10 +13,12 @@ export const productsReducer = (state, action) => {
     switch (type) {
         case SET_ITEMS:
             let categories = [];
-            payload.categories.forEach((category) =>
-                categories.push({ label: category, isChecked: true })
-            );
-            if (state.sorted == "ascending") {
+            if (payload.categories)
+                payload.categories.forEach((category) =>
+                    categories.push({ label: category, isChecked: true })
+                );
+
+            if (state.sorted == "ascending")
                 return state.categories.length
                     ? {
                           ...state,
@@ -24,7 +33,7 @@ export const productsReducer = (state, action) => {
                               (a, b) => a.price - b.price
                           ),
                       };
-            } else if (state.sorted == "descending") {
+            else if (state.sorted == "descending")
                 return state.categories.length
                     ? {
                           ...state,
@@ -39,10 +48,10 @@ export const productsReducer = (state, action) => {
                               (a, b) => b.price - a.price
                           ),
                       };
-            }
-            return state.categories.length
-                ? { ...state, products: payload.products }
-                : { ...state, categories, products: payload.products };
+            else
+                return state.categories.length
+                    ? { ...state, products: payload.products }
+                    : { ...state, categories, products: payload.products };
 
         case SORT_ITEMS:
             if (payload.sortBy === "ascending")
@@ -72,6 +81,37 @@ export const productsReducer = (state, action) => {
             return {
                 ...state,
                 categories: payload.categories,
+            };
+
+        case DELETE_ITEM:
+            return {
+                ...state,
+                products: [...state.products].filter(
+                    (product) => product.id !== payload
+                ),
+            };
+
+        case ADD_PRODUCT:
+            const products = [...state.products];
+            products.push(payload);
+            return { ...state, products };
+
+        case UPDATE_PRODUCT:
+            // console.log(payload);
+            return {
+                ...state,
+                products: [...state.products].map((product) =>
+                    product.id === payload.id
+                        ? {
+                              ...product,
+                              title: payload.title,
+                              description: payload.description,
+                              price: payload.price,
+                              image: payload.image,
+                              category: payload.category,
+                          }
+                        : product
+                ),
             };
 
         default:

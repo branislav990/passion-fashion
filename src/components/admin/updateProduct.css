@@ -1,0 +1,93 @@
+.modal-update-wrapper {
+    padding: 0 1em;
+}
+
+.modal-title {
+    color: #1e507b;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.label-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1em auto;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: #1e507b;
+}
+
+.label-input-wrapper label {
+    font-weight: bold;
+}
+
+.label-input-wrapper input,
+.label-input-wrapper textarea {
+    border-radius: 0.5em;
+    padding: 0.5em;
+    color: #1e507b;
+    border: none;
+}
+
+.label-input-wrapper input:focus,
+.label-input-wrapper textarea:focus {
+    outline: 1px solid #1e507b;
+}
+
+.label-input-wrapper textarea {
+    height: 7em;
+}
+
+.img-input-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.img-input-wrapper input {
+    width: 25em;
+}
+
+.mng-img-wrapper {
+    margin-left: 4em;
+    height: 8em;
+    background-color: white;
+    padding: 0.2em;
+    box-shadow: 0 0 10px 10px white;
+    margin-top: 1em;
+}
+
+.mng-img-wrapper img {
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.img-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-btn-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 720px) {
+    .img-input-wrapper {
+        flex-direction: column;
+    }
+
+    .mng-img-wrapper {
+        margin-inline: auto;
+    }
+
+    .img-input-wrapper input {
+        width: 100%;
+        margin-inline: auto;
+    }
+}

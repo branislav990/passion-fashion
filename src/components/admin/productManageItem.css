@@ -1,0 +1,70 @@
+.product-management-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    color: #1e507b;
+    margin-right: 1em;
+    padding: 0.5em 0;
+}
+
+.product-management-list-item:not(:last-of-type) {
+    border-bottom: 1px solid #1e507b;
+}
+
+.product-management-first-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
+.product-management-img-title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.product-management-title {
+    margin-left: 4em;
+    margin-right: 2em;
+    text-align: left;
+    width: 70%;
+}
+
+.edit-icon,
+.product-management-trash {
+    width: 2em;
+    cursor: pointer;
+}
+
+.product-management-img-wrapper {
+    height: 4em;
+    background-color: white;
+    margin: 1em;
+}
+
+.product-management-img {
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.product-management-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    margin-right: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+    .product-management-title {
+        margin-left: 2em;
+    }
+
+    .product-management-list-item {
+        width: 40em;
+    }
+}

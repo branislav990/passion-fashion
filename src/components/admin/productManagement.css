@@ -1,0 +1,62 @@
+.product-management-list {
+    height: 30em;
+    overflow: auto;
+    margin-inline: auto;
+    background-color: white;
+    margin-bottom: 0;
+}
+
+.product-management-header {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(30, 80, 123, 0.7);
+    color: white !important;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    padding: 0.3em 0;
+}
+
+.add-new-product {
+    width: 100%;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    color: white;
+    background-color: #009ea7;
+    letter-spacing: 0.2em;
+    border: none;
+    height: 2em;
+    font-weight: bold;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s;
+    padding: 0.3em 0;
+}
+
+.add-new-product:hover {
+    background-color: #01c39a;
+}
+
+.product-management-img-title-header {
+    margin-left: 3.5em;
+}
+
+.p-m-title {
+    margin-left: 5.5em;
+}
+
+.p-m-price {
+    margin-right: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+    .product-management-header {
+        display: none !important;
+    }
+
+    .product-management-list {
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+    }
+}

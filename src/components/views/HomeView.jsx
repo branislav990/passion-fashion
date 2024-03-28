@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import instance from "../../utils/api";
 import Loading from "../loading/Loading";
 import { Link } from "react-router-dom";
@@ -7,20 +7,30 @@ import Error from "../error/Error";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import fashionCollection from "../../assets/fashion-collection.jpg";
+import { ProductsContext } from "../../contexts/ProductsContext";
 
 const HomeView = () => {
     const [jewelry, setJewerlry] = useState([]);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
 
+    const { products } = useContext(ProductsContext);
+
     useEffect(() => {
-        instance
-            .get("/products/category/jewelery")
-            .then((res) => setJewerlry(res.data))
-            .catch(() => setError(true))
-            .finally(() => {
-                setLoading(false);
-            });
+        if (products.length) {
+            setJewerlry(
+                products.filter((product) => product.category === "jewelery")
+            );
+            setLoading(false);
+        } else {
+            instance
+                .get("/products/category/jewelery")
+                .then((res) => setJewerlry(res.data))
+                .catch(() => setError(true))
+                .finally(() => {
+                    setLoading(false);
+                });
+        }
     }, []);
 
     return (
@@ -32,7 +42,7 @@ const HomeView = () => {
                     <Error />
                 </div>
             ) : (
-                <div className="advertisement">
+                <div className="advertisement container">
                     <Link to={"/products"}>
                         <img
                             src={fashionCollection}

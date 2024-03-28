@@ -58,7 +58,7 @@
     text-align: right;
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 992px) {
     .single-product-info {
         min-height: 400px;
     }
@@ -76,7 +76,7 @@
     }
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 992px) {
     .single-product-info {
         width: 100%;
         min-height: 0;

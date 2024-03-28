@@ -1,0 +1,56 @@
+.admin-wrapper {
+    margin-top: 1em;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.admin-btns {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5em;
+}
+
+.btn-product-management,
+.btn-cart-management {
+    width: fit-content;
+    letter-spacing: 0.2em;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s, scale 0.3s;
+    margin-inline: auto;
+}
+
+.btn-product-management {
+    background-color: rgba(65, 155, 69, 0.9);
+}
+
+.btn-product-management:hover {
+    background-color: rgba(65, 155, 69, 1);
+}
+
+.btn-cart-management {
+    background-color: rgba(166, 103, 145, 0.9);
+}
+
+.btn-cart-management:hover {
+    background-color: rgba(166, 103, 145, 1);
+}
+
+.btn-product-management:active,
+.btn-cart-management:active {
+    scale: 0.97;
+}
+
+@media only screen and (max-width: 576px) {
+    .admin-btns {
+        flex-direction: column;
+    }
+
+    .btn-product-management,
+    .btn-cart-management {
+        margin-bottom: 2em;
+    }
+}

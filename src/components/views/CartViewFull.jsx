@@ -9,7 +9,7 @@ const CartViewFull = () => {
 
     return (
         <div>
-            <div className="cart-view-full">
+            <div className="cart-view-full container">
                 <div className="cart-summary">
                     <h2>Order summary</h2>
                     <CartList cartState={cartState} />
