@@ -9,3 +9,5 @@ Log in is also enabled for admin users, where the only available username and pa
 
 All actions related to sending POST, PATCH and DELETE requests are connected to the API which sends back a specific response object, but the database doesn't get updated.
 Because of that I update the local state of the application accordingly to simulate functionality of a full-stack application.
+
+(still some styling is left to be finished)
