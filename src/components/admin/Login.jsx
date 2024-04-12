@@ -37,7 +37,7 @@ const Login = () => {
     return (
         <div>
             <form onSubmit={handleSubmit} className="login-form container">
-                {error && <p>Wrong username or password</p>}
+                {error && <p className="wrong-password">Wrong username or password</p>}
                 {!error && (
                     <p style={{ visibility: "hidden" }}>Error placeholder</p>
                 )}

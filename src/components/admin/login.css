@@ -16,3 +16,12 @@
 .login-input input:focus {
     box-shadow: 0 0 5px #1e507b;
 }
+
+.wrong-password {
+    color: red;
+    font-weight: bold;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    text-shadow: 1px 1px white;
+    letter-spacing: 0.1em;
+}

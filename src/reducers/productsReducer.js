@@ -97,7 +97,6 @@ export const productsReducer = (state, action) => {
             return { ...state, products };
 
         case UPDATE_PRODUCT:
-            // console.log(payload);
             return {
                 ...state,
                 products: [...state.products].map((product) =>

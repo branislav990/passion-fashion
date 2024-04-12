@@ -1,0 +1,61 @@
+.cart-management {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: #545479;
+}
+
+.cart-management h1 {
+    font-size: 1.8em;
+}
+
+table,
+th,
+td {
+    border: 1px solid #545479;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-radius: 1em;
+}
+
+td,
+th {
+    padding: 0.5em;
+}
+
+table thead {
+    background-color: #ad769c;
+    color: white;
+}
+
+table th:first-of-type {
+    border-top-left-radius: 1em;
+}
+
+table th:last-of-type {
+    border-top-right-radius: 1em;
+}
+
+table tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 1em;
+}
+
+table tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 1em;
+}
+
+table tr:nth-child(even) {
+    background-color: rgba(231, 233, 236, 0.5);
+}
+
+table tr:hover {
+    font-weight: bold;
+}
+
+.table-wrapper {
+    min-width: 90%;
+    overflow: auto;
+    margin-bottom: 1em;
+}

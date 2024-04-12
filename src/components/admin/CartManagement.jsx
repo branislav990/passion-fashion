@@ -6,6 +6,7 @@ import { ADD_GLOBAL_CARTS, SET_ITEMS } from "../../utils/actionTypes";
 import CartManageItem from "./CartManageItem";
 import Error from "../error/Error";
 import Loading from "../loading/Loading";
+import "./cartManagement.css";
 
 const CartManagement = () => {
     const { cartManagementState, cartManagementDispatch } = useContext(
@@ -61,23 +62,40 @@ const CartManagement = () => {
                     <Error />
                 </div>
             ) : (
-                <div>
-                    <h1>Under Development</h1>
-                    {/* <h1>Cart Management</h1> */}
-                    {/* <table style={{ width: "800px", textAlign: "center" }}>
-                        {cartManagementState.length
-                            ? cartManagementState.map((cart) => (
-                                  <CartManageItem key={cart.id} cart={cart} />
-                              ))
-                            : null}
-                    </table> */}
-                    {/* <ul>
-                        {cartManagementState.length
-                            ? cartManagementState.map((cart) => (
-                                  <CartManageItem key={cart.id} cart={cart} />
-                              ))
-                            : null}
-                    </ul> */}
+                <div
+                    className="container cart-management"
+                    style={{ marginInline: "auto" }}
+                >
+                    <h1 style={{ marginBottom: "1em" }}>Cart Management</h1>
+                    <div className="table-wrapper">
+                        <table style={{ textAlign: "center" }}>
+                            <thead>
+                                <tr>
+                                    <th>cart id</th>
+                                    <th>user id</th>
+                                    <th>order date</th>
+                                    <th>
+                                        <span>
+                                            product
+                                            <br /> id / quantity
+                                        </span>
+                                    </th>
+                                    <th>total price</th>
+                                    <th>remove cart</th>
+                                </tr>
+                            </thead>
+                            <tbody style={{ width: "90%" }}>
+                                {cartManagementState.length
+                                    ? cartManagementState.map((cart) => (
+                                          <CartManageItem
+                                              key={cart.id}
+                                              cart={cart}
+                                          />
+                                      ))
+                                    : null}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             )}
         </>

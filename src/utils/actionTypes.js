@@ -19,3 +19,4 @@ export const REMOVE_TOKEN = "REMOVE_TOKEN";
 // Cart Management Types
 export const ADD_GLOBAL_CARTS = "ADD_GLOBAL_CARTS";
 export const ADD_LOCAL_CART = "ADD_LOCAL_CART";
+export const REMOVE_CART = "REMOVE_CART";

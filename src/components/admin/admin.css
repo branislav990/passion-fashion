@@ -10,6 +10,10 @@
     margin-top: 5em;
 }
 
+.admin-title {
+    color: #545479;
+}
+
 .btn-product-management,
 .btn-cart-management {
     width: fit-content;
